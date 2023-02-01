@@ -4,12 +4,13 @@ import './styles/index.scss';
 import { AboutPageLazy } from './pages/aboutPage/AboutPage.lazy';
 import { MainPageLazy } from './pages/mainPage/MainPage.lazy';
 import { useTheme } from './theme/useTheme';
+import { classNames } from './helpers/classNames/classNames';
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className={`app ${theme}`}>
+    <div className={classNames('app', {}, [theme])}>
       <button onClick={toggleTheme}>TOGGLE THEME</button>
       <Link to='/'>Главная</Link>
       <Link to='/about'>О сайте</Link>
