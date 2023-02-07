@@ -12,7 +12,7 @@ export function AppRouter() {
               key={path}
               path={path}
               element={(
-                <div>
+                <div className="page-wrapper">
                   {element}
                 </div>
               )}
