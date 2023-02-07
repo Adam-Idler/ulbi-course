@@ -3,6 +3,16 @@ import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif|woff2?)$/i,
+    use: 'file-loader'
+  }
+
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack']
+  };
+
   // Если не используем тайпскрипт - нужен babel-loader
   const typeScriptLoader = {
     test: /\.tsx?$/,
@@ -30,6 +40,8 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   }
 
   return  [
+    fileLoader,
+    svgLoader,
     typeScriptLoader,
     cssLoader
   ];
