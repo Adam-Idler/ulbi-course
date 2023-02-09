@@ -19,7 +19,7 @@ const App = () => {
         </div>
       </Suspense>
     </div>
-  )
+  );
 };
 
 export default App;
