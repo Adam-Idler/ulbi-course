@@ -24,7 +24,7 @@ module.exports = {
     semi: [2, 'always'],
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/semi': 0,
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'i18next/no-literal-string': ['error', { markupOnly: true, onlyAttribute: [''] }],
     '@typescript-eslint/explicit-function-return-type': [
       0,
       {
