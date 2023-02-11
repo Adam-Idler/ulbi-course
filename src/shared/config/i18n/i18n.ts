@@ -12,7 +12,7 @@ void i18n
     fallbackLng: 'en',
     debug: IS_DEV,
     react: {
-      useSuspense: false
+      // useSuspense: false
     },
 
     interpolation: {
