@@ -3,6 +3,8 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from "path";
+
 export default {
   // Automatically clear mock calls, instances and results before every test
   clearMocks: true,
@@ -17,6 +19,9 @@ export default {
   moduleDirectories: [
     'node_modules'
   ],
+  modulePaths: [
+    '<rootDir>src'
+  ],
 
   // An array of file extensions your modules use
   moduleFileExtensions: [
@@ -30,6 +35,11 @@ export default {
 
   // The root directory that Jest should scan for tests and modules within
   rootDir: '../..',
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+  moduleNameMapper: {
+    '\\.s?css$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
+  },
 
   testMatch: [
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
@@ -152,9 +162,6 @@ export default {
 
   // Setting this value to "fake" allows the use of fake timers for functions such as "setTimeout"
   // timers: "real",
-
-  // A map from regular expressions to paths to transformers
-  // transform: undefined,
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [

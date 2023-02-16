@@ -8,12 +8,11 @@ module.exports = {
     'standard-with-typescript',
     'plugin:i18next/recommended'
   ],
-  overrides: [
-  ],
   parserOptions: {
     ecmaVersion: 'latest',
+    // parser: '@typescript-eslint/parser',
     sourceType: 'module',
-    project: ['./tsconfig.json']
+    project: 'tsconfig.json'
   },
   plugins: [
     'react',
@@ -36,5 +35,13 @@ module.exports = {
     react: {
       version: 'detect'
     }
-  }
+  },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off'
+      }
+    }
+  ]
 };
