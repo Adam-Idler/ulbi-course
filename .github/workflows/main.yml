@@ -3,20 +3,20 @@ on:
   push:
     branches: [ master ]
   pull_request:
-   branches: [ master ]
+    branches: [ master ]
 jobs:
   pipeline:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 18.x ]
-    
+        node-version: [ 17.x ]
+
     steps:
       - uses: actions/checkout@v2
       - name: Starting Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          nove-version: ${{ matrix.node-version }}
+          node-version: ${{ matrix.node-version }}
       
       - name: install modules
         run: npm install
