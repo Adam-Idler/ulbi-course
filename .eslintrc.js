@@ -1,12 +1,10 @@
 module.exports = {
   env: {
-    browser: true,
-    es2021: true
+    browser: true
   },
   extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
   parserOptions: {
     ecmaVersion: 'latest',
-    // parser: '@typescript-eslint/parser',
     sourceType: 'module',
     project: 'tsconfig.json'
   },
