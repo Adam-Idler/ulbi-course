@@ -30,6 +30,10 @@
     }
   },
   "include": [
-    "./config/tests/setupTests.ts"
+    "./*.config.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./config/**/*.ts",
+    "./config/**/*.tsx"
   ]
 }

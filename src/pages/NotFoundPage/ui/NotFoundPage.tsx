@@ -1,13 +1,13 @@
 import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib';
-import cls from './NotFountPage.module.scss';
+import cls from './NotFoundPage.module.scss';
 
-interface NotFountPageProps {
+interface NotFoundPageProps {
   className?: string
 }
 
-export const NotFountPage: FC<NotFountPageProps> = ({ className = '' }) => {
+export const NotFoundPage: FC<NotFoundPageProps> = ({ className = '' }) => {
   const { t } = useTranslation();
 
   return (
