@@ -12,6 +12,7 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
     semi: [2, 'always'],
+    'linebreak-style': 0,
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/semi': 0,
     'i18next/no-literal-string': ['error', {
