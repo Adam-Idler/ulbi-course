@@ -17,13 +17,13 @@ export function buildPlugins ({ isDev, paths }: BuildOptions): webpack.WebpackPl
     }),
     new webpack.DefinePlugin({
       IS_DEV: JSON.stringify(isDev)
-    }),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false
     })
   ];
 
   if (isDev) {
+    plugins.push(new BundleAnalyzerPlugin({
+      openAnalyzer: false
+    }));
     plugins.push(new ReactRefreshWebpackPlugin());
     plugins.push(new webpack.HotModuleReplacementPlugin());
   }
