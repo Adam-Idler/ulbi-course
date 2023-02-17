@@ -1,6 +1,7 @@
 module.exports = {
   env: {
-    browser: true
+    browser: true,
+    es2021: true
   },
   extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
   parserOptions: {
