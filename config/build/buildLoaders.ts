@@ -26,7 +26,6 @@ export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
             {
               locales: ['ru', 'en'],
               keyAsDefaultValue: false,
-              saveMissing: true,
               outputPath: 'public/locales/{{locale}}/{{ns}}.json'
             }
           ]

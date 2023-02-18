@@ -8,8 +8,9 @@ void i18n
     fallbackLng: 'ru',
 
     debug: false,
-
-    resources: { ru: { translations: {} } }
+    interpolation: {
+      escapeValue: false
+    }
   });
 
 export default i18n;

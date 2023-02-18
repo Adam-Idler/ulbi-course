@@ -3,13 +3,22 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
+  extends: [
+    'plugin:react/recommended',
+    'standard-with-typescript',
+    'plugin:i18next/recommended', 
+    'plugin:storybook/recommended'
+  ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: 'tsconfig.json'
   },
-  plugins: ['react', '@typescript-eslint', 'i18next'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'i18next'
+  ],
   rules: {
     semi: [2, 'always'],
     'linebreak-style': 0,
