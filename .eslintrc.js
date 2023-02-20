@@ -17,7 +17,8 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
-    'i18next'
+    'i18next',
+    'react-hooks'
   ],
   rules: {
     semi: [2, 'always'],
@@ -30,7 +31,9 @@ module.exports = {
     }],
     '@typescript-eslint/explicit-function-return-type': [0, {
       allowExpressions: true
-    }]
+    }],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error'
   },
   settings: {
     react: {
