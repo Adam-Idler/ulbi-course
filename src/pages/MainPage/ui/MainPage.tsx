@@ -1,3 +1,4 @@
+import { Counter } from 'entities/Counter';
 import { useTranslation } from 'react-i18next';
 
 function MainPage (): JSX.Element {
@@ -6,6 +7,7 @@ function MainPage (): JSX.Element {
   return (
     <div>
       {t('Главная страница')}
+      <Counter />
     </div>
   );
 }
