@@ -21,6 +21,7 @@ module.exports = {
     'react-hooks'
   ],
   rules: {
+    'react/display-name': "off",
     semi: [2, 'always'],
     'linebreak-style': 0,
     'react/react-in-jsx-scope': 'off',

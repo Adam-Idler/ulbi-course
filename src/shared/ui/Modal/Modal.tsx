@@ -57,11 +57,15 @@ export const Modal: FC<ModalProps> = ({
     };
   }, [isOpen, onKeyDown]);
 
+  if (!isOpen) {
+    return null;
+  }
+
   return (
     <Portal>
       <div className={classNames(cls.modal, mods, [className])}>
-        <div className={cls.overlay} onClick={closeHandler}>
-          <div className={cls.content} onClick={(e) => { onContentClick(e); }}>
+        <div className={cls.overlay} onMouseDown={closeHandler}>
+          <div className={cls.content} onMouseDownCapture={(e) => { onContentClick(e); }}>
             {children}
           </div>
         </div>
