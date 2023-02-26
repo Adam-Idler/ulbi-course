@@ -34,7 +34,10 @@ module.exports = {
       allowExpressions: true
     }],
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'error'
+    'react-hooks/exhaustive-deps': 'error',
+    '@typescript-eslint/strict-boolean-expressions': ['error', {
+      allowNullableString: true
+    }]
   },
   settings: {
     react: {
