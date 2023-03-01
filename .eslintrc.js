@@ -22,22 +22,23 @@ module.exports = {
   ],
   rules: {
     'react/display-name': "off",
-    semi: [2, 'always'],
-    'linebreak-style': 0,
     'react/react-in-jsx-scope': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
+    'linebreak-style': 0,
     '@typescript-eslint/semi': 0,
+    '@typescript-eslint/explicit-function-return-type': [0, {
+      allowExpressions: true
+    }],
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
       onlyAttribute: ['']
-    }],
-    '@typescript-eslint/explicit-function-return-type': [0, {
-      allowExpressions: true
     }],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
     '@typescript-eslint/strict-boolean-expressions': ['error', {
       allowNullableString: true
-    }]
+    }],
+    semi: [2, 'always'],
   },
   settings: {
     react: {
