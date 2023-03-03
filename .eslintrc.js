@@ -21,7 +21,9 @@ module.exports = {
     'react-hooks'
   ],
   rules: {
-    'react/display-name': "off",
+    '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/prefer-ts-expect-error': 'off',
+    'react/display-name': 'off',
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
     'linebreak-style': 0,

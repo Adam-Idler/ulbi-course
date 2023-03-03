@@ -11,7 +11,7 @@ interface InputProps extends HTMLInputProps {
 }
 
 export const Input = memo(({
-  className = '',
+  className,
   value,
   onChange,
   type = 'text',

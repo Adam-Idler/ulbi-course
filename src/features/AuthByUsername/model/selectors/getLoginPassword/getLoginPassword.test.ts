@@ -1,4 +1,3 @@
-import { type DeepPartial } from '@reduxjs/toolkit';
 import { type StateSchema } from 'app/providers/StoreProvider';
 import { getLoginPassword } from './getLoginPassword';
 
@@ -6,9 +5,7 @@ describe('getLoginPassword', () => {
   it('should return password value', () => {
     const state: DeepPartial<StateSchema> = {
       loginForm: {
-        username: '',
-        password: '123',
-        isLoading: false
+        password: '123'
       }
     };
     expect(getLoginPassword(state as StateSchema)).toBe('123');

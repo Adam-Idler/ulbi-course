@@ -25,7 +25,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = memo(({
-  className = '',
+  className,
   square = false,
   size = ButtonSize.M,
   children,
