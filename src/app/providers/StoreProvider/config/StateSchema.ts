@@ -1,5 +1,4 @@
 import { type LoginSchema } from 'features/AuthByUsername';
-import { type CounterSchema } from 'entities/Counter';
 import { type UserSchema } from 'entities/User';
 import { type CombinedState, type AnyAction, type EnhancedStore, type Reducer, type ReducersMapObject, type Dispatch } from '@reduxjs/toolkit';
 import { type ProfileSchema } from 'entities/Profile';
@@ -7,7 +6,6 @@ import { type AxiosInstance } from 'axios';
 import { type To, type NavigateOptions } from 'react-router-dom';
 
 export interface StateSchema {
-  counter: CounterSchema
   user: UserSchema
 
   // Ассинхронные редюсеры
@@ -37,4 +35,5 @@ export interface ThunkConfig<T> {
   rejectValue: T
   extra: ThunkExtraArg
   dispatch?: Dispatch
+  state: StateSchema
 }

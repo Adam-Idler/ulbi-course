@@ -1,13 +1,14 @@
 import { type InputHTMLAttributes, memo, useState } from 'react';
 import { classNames } from 'shared/lib';
+import { type Mods } from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 
 interface InputProps extends HTMLInputProps {
   className?: string
-  value?: string
-  onChange?: (value: string) => void
+  value?: string | number
+  onChange?: (value?: string) => void
 }
 
 export const Input = memo(({
@@ -16,11 +17,16 @@ export const Input = memo(({
   onChange,
   type = 'text',
   placeholder = '',
+  readOnly,
   ...forwardingProps
 }: InputProps) => {
   const [caretPosition, setCaretPosition] = useState(0);
+  const mods: Mods = {
+    [cls.readonly]: readOnly
+  };
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (readOnly === true) return;
     onChange?.(e.target.value);
     setCaretPosition(e.target.value.length);
   };
@@ -31,7 +37,7 @@ export const Input = memo(({
   };
 
   return (
-    <div className={classNames(cls.inputWrapper, {}, [className])}>
+    <div className={classNames(cls.inputWrapper, mods, [className])}>
       {Boolean(placeholder) && (
         <div className={cls.placeholder}>
           {`${placeholder}>\u00A0`}
@@ -46,7 +52,13 @@ export const Input = memo(({
           className={cls.input}
           {...forwardingProps}
         />
-        <span className={cls.caret} style={{ left: `${caretPosition * 9}px` }} />
+
+        {(readOnly === false) && (
+          <span
+            className={cls.caret}
+            style={{ left: `${caretPosition * 9}px` }}
+          />
+        )}
       </div>
 
     </div>
