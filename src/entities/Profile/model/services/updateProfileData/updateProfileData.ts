@@ -18,6 +18,12 @@ export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<Val
 
     try {
       const response = await extra.api.put<Profile>('/profile', formData);
+
+      // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+      if (!response.data) {
+        throw new Error();
+      }
+
       return response.data;
     } catch (e) {
       console.log(e);
