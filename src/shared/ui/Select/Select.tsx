@@ -43,7 +43,7 @@ export const Select = memo(({ className, label, options, value, onChange, readon
   return (
     <div className={classNames(cls.wrapper, mods, [className])}>
       {!!label && (
-        <span className={cls.label}>
+        <span className={classNames(cls.label, { [cls.readonly]: readonly }, [])}>
           {`${label}>`}
         </span>
       )}

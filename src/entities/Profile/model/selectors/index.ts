@@ -1,3 +1,4 @@
+export { getProfileValidateErrors } from './getProfileValidateErrors/getProfileValidateError';
 export { getProfileReadonly } from './getProfileReadonly/getProfileReadonly';
 export { getProfileData } from './getProfileData/getProfileData';
 export { getProfileError } from './getProfileError/getProfileError';
