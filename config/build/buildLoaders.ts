@@ -1,4 +1,5 @@
 import type webpack from 'webpack';
+import { buildBabelLoader } from './loaders/buildBabelLoader';
 import { buildCssLoader } from './loaders/buildCssLoader';
 import { type BuildOptions } from './types/config';
 
@@ -13,26 +14,9 @@ export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     use: ['@svgr/webpack']
   };
 
-  const babelLoader = {
-    test: /\.([tj]sx?)$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env'],
-        plugins: [
-          [
-            'i18next-extract',
-            {
-              locales: ['ru', 'en'],
-              keyAsDefaultValue: true,
-              outputPath: 'public/locales/{{locale}}/{{ns}}.json'
-            }
-          ]
-        ]
-      }
-    }
-  };
+  const babelLoader = buildBabelLoader();
+
+  const cssLoader = buildCssLoader(isDev);
 
   // Если не используем тайпскрипт - нужен babel-loader
   const typeScriptLoader = {
@@ -40,8 +24,6 @@ export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     use: 'ts-loader',
     exclude: /node_modules/
   };
-
-  const cssLoader = buildCssLoader(isDev);
 
   return [
     fileLoader,
